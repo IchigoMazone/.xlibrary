@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Bản đồ Hà Nội</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <style>
+      html,
+      body,
+      #map {
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      const map = L.map("map").setView([21.028, 105.834], 11);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap",
+      }).addTo(map);
+
+      fetch("./geojsony.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const layer = L.geoJSON(data, {
+            style: () => ({
+              color: "#8e44ad",
+              weight: 2,
+              opacity: 0.8,
+            }),
+          }).addTo(map);
+
+          map.fitBounds(layer.getBounds());
+        })
+        .catch((err) => console.error("Lỗi load file:", err));
+    </script>
+  </body>
+</html>
