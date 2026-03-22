@@ -26,7 +26,7 @@
         attribution: "© OpenStreetMap",
       }).addTo(map);
 
-      fetch("./geojsony.json")
+      fetch("./geojson_7.1.0.json")
         .then((res) => res.json())
         .then((data) => {
           const layer = L.geoJSON(data, {
