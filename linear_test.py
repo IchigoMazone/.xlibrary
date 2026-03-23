@@ -1,4 +1,4 @@
-from izlearn.linear_mode import LinearRegression
+from izlearn.linear_model import LinearRegression
 from izlearn.preprocessing import StandardScaler
 from izlearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 import numpy as np
