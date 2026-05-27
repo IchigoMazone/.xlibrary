@@ -1,0 +1,34 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+ichigo/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE and Editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build and Distribution artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Local/Scratch test files
+test_*.py
+compare_*.py
