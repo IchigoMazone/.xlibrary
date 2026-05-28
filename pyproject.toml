@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xtorch"
+version = "0.1.0"
+description = "A small PyTorch-like library"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24"
+]
+
+[project.optional-dependencies]
+cuda = [
+    "cupy-cuda12x>=13"
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["xtorch*"]

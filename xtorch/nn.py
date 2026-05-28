@@ -1,4 +1,4 @@
-import cupy as cp
+from xtorch.backend import cp
 
 class Tensor:
 
